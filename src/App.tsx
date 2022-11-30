@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, useEffect, useState } from "react";
 
-function App() {
+import GanttChart from "./components/GanttChart/GanttChart";
+import Button from "./components/Button/Button";
+import { TProject } from "./types/chart";
+import { getChartData } from "./api/getChartData";
+import styles from "./App.module.scss";
+
+const App: FC = () => {
+  const [chartData, setChartData] = useState<TProject>();
+
+  const getData = async () => {
+    const chartData = await getChartData<TProject>();
+    setChartData(chartData);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <div className={styles.titleContainer}>
+        {chartData && (
+          <h1
+            className={styles.title}
+          >{`${chartData.project} / ${chartData.period}`}</h1>
+        )}
+        <Button text="Export" />
+      </div>
+      {chartData && <GanttChart data={chartData} />}
     </div>
   );
-}
+};
 
 export default App;

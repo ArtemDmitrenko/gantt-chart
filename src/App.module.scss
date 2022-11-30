@@ -1,0 +1,19 @@
+@import "./style/variables.scss";
+
+.container {
+  padding: 25px;
+}
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: $primaryColor;
+  margin-bottom: 18px;
+}

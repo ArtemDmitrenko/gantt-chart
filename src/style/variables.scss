@@ -1,0 +1,24 @@
+$mediaSizeDesktop: 1200px;
+$mediaSizeLaptop: 1000px;
+$mediaSizeTablet: 800px;
+$mediaSizeMobile: 420px;
+
+$containerWidth: 1200px;
+$headerPadding: 18px;
+
+$textColor: #1f2041;
+$textColor75: rgba($textColor, 0.75);
+$textColor50: rgba($textColor, 0.5);
+$textColor25: rgba($textColor, 0.25);
+$textColor10: rgba($textColor, 0.1);
+$textColor05: rgba($textColor, 0.05);
+
+$primaryColor: #262842;
+$secondaryColor: #8b8c9e;
+$titlesColor: #6d6e85;
+$daysOffColor: #a9a9b8;
+$borderColor: rgba(38, 40, 66, 0.12);
+
+$primaryFont: "Roboto", sans-serif;
+
+$transition: all 0.3s ease-in-out;

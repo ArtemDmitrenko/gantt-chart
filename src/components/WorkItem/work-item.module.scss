@@ -1,0 +1,51 @@
+@import "../../style/variables.scss";
+
+.accordion {
+  background: #ffffff;
+  height: 40px;
+}
+
+.title {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: center;
+
+  &::before {
+    transition: $transition;
+    content: url("./images/chevron.svg");
+    rotate: 180deg;
+  }
+}
+
+.titleOpened {
+  &::before {
+    transition: $transition;
+    rotate: 0deg;
+  }
+}
+
+.icon {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.quantity {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 16px;
+  color: $secondaryColor;
+  margin-right: 8px;
+}
+
+.simpleItem {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+}

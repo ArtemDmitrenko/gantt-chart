@@ -1,0 +1,57 @@
+@import "../../style/variables.scss";
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.period {
+  display: flex;
+  flex-direction: column;
+}
+.days {
+  display: flex;
+  flex-grow: 1;
+}
+.week {
+  background: #f7f8fc;
+  border-width: 1px 1px 1px 0px;
+  border-style: solid;
+  border-color: $borderColor;
+  text-align: center;
+  min-height: 24px;
+}
+
+.dayBlock {
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(6),
+  &:nth-child(7) {
+    & .day {
+      color: #a9a9b8;
+    }
+  }
+}
+
+.day {
+  line-height: 24px;
+  min-height: 24px;
+  min-width: 22px;
+  background: #f7f8fc;
+  border-right: 1px solid $borderColor;
+  text-align: center;
+}
+
+.column {
+  border-width: 1px 1px 1px 0px;
+  border-style: solid;
+  border-color: $borderColor;
+  flex-grow: 1;
+}
+
+.sausageContainer {
+  position: absolute;
+  left: 0;
+  top: 56px;
+}
